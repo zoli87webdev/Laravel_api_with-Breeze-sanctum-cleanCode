@@ -9,9 +9,15 @@ class UserService
 {
     public function __construct(protected UserRepository $repository) {}
 
-    public function getAll() { return $this->repository->all(); }
+    public function getAll()
+    {
+        return $this->repository->all();
+    }
 
-    public function getById($id) { return $this->repository->find($id); }
+    public function getById($id)
+    {
+        return $this->repository->find($id);
+    }
 
     public function create(UserDTO $dto)
     {

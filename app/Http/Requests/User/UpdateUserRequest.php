@@ -7,9 +7,12 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateUserRequest extends FormRequest
 {
-    public function authorize() { return true; }
+    public function authorize(): bool
+    {
+        return true;
+    }
 
-    public function rules()
+    public function rules(): array
     {
         return [
             'name' => 'sometimes|string|max:255',

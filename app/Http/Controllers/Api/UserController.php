@@ -34,6 +34,7 @@ class UserController extends Controller
         );
 
         $user = $this->userService->create($dto);
+
         return new UserResource($user);
     }
 
@@ -41,6 +42,7 @@ class UserController extends Controller
     {
         $dto = new UserDTO($request->validated());
         $user = $this->userService->update($id, $dto);
+
         return new UserResource($user);
 
     }
@@ -48,6 +50,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $this->userService->delete($id);
+        
         return response()->json(["message"=> "User deleted"]);
     }
 }

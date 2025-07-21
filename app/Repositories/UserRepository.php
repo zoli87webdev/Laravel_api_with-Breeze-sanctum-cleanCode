@@ -15,7 +15,7 @@ class UserRepository
     {
         return User::findOrFail($id);
     }
-    
+
     public function create(array $data)
     {
         return User::create($data);
